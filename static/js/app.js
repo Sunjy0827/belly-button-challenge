@@ -1,46 +1,4 @@
-# belly-button-challenge
-<h2>Interactive Visualizations with Javascript</h2>
-
-<h3>Overview</h3>
-<div>
-In this assignment, I utilized JavaScript and Plotly Library along with HTML and Bootstrap to create an interactive website dashboard. <a href="https://robdunnlab.com/projects/belly-button-biodiversity/">Belly Button Biodiversity dataset</a> was used for this project and reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
-
-<b>Reference:</b><br/>
-Hulcr, J. et al. (2012) A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable. Retrieved from: http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/Links to an external site.
-
-</div>
-<hr/>
-<div>
-Goal:
-<ul>
-<li>Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.</li>
-<li>Create a bubble chart that displays each sample.</li>
-<li>Display the sample's metadata, i.e., an individual's demographic information.</li>
-<li>Update all the plots when a new sample is selected.</li>
-<li>Deploy your app to a free static page hosting service, such as GitHub Pages</li>
-</ul>
-
-<h3>Tools and Techniques</h3>
-<hr/>
-
-<ul>
-<li>Javascript</li>
-<li>Plotly Library</li>
-<li>HTML</li>
-<li>Json</li>
-<li>Bootstrap</li>
-<li>d3</li>
-</ul>
-
-</div>
-
-<h3>Project Structure</h3>
-<hr/>
-
-
-<h4>Part 1: build the metadata panel</h4>
-
-```javascript
+// Build the metadata panel
 function buildMetadata(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
@@ -59,14 +17,11 @@ function buildMetadata(sample) {
 
     // Inside a loop, use d3 to append new tags for each key-value in the filtered metadata.
     Object.entries(result).forEach(([key, value]) => {
-      panel.append("h6").text(`${key.toUpperCase()}: ${value}`); })
-    ;})
-;}
-```
+      panel.append("h6").text(`${key.toUpperCase()}: ${value}`);
+    });
 
-<h4>Part 2: Build Bubble and Bar Chart</h4>
-
-```javascript
+  });
+}
 
 // Function to build both charts
 function buildCharts(sample) {
@@ -128,12 +83,7 @@ function buildCharts(sample) {
     Plotly.newPlot("bar", barData, barLayout);
   });
 }
-```
 
-<h4>Part 3: Deploy the app to a website</h4>
-
-
-```javascript
 // Function to run on page load
 function init() {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
@@ -173,11 +123,3 @@ function optionChanged(newSample) {
 
 // Initialize the dashboard
 init();
-```
-
-
-<h3>Conclusion</h3>
-<hr/>
-<p>
-This assignment showcased how the interactive dashboard can be built with javascript and plotly libarary. the deployed website can be found in this <b><a href="ab.com">link</a></b>
-</p>
