@@ -179,5 +179,5 @@ init();
 <h3>Conclusion</h3>
 <hr/>
 <p>
-This assignment showcased how the interactive dashboard can be built with javascript and plotly libarary. the deployed website can be found in this <b><a href="ab.com">link</a></b>
+This assignment showcased how the interactive dashboard can be built with javascript and plotly libarary. the deployed website can be found in this <b><a href="https://sunjy0827.github.io/belly-button-challenge/">link</a></b>
 </p>
